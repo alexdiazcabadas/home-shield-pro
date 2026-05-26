@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeShield Pros – Air Duct, Chimney & Garage Door Services</title>
+  <meta name="description" content="Request a professional appointment proposal for air duct cleaning, chimney cleaning, or garage door repair. Fast, clear, homeowner-first service coordination." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & TOKENS ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0B1E3D;
+      --navy-mid:  #132850;
+      --navy-light:#1E3A6B;
+      --blue:      #1A6FE8;
+      --blue-light:#3D8EFF;
+      --sky:       #E8F2FF;
+      --white:     #FFFFFF;
+      --offwhite:  #F7F9FC;
+      --slate:     #64748B;
+      --text:      #1A2740;
+      --muted:     #8895A7;
+      --border:    #DDE4EF;
+      --success:   #16A34A;
+      --error:     #DC2626;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --radius-sm: 6px;
+      --radius:    12px;
+      --radius-lg: 20px;
+      --shadow:    0 4px 24px rgba(11,30,61,0.10);
+      --shadow-lg: 0 12px 48px rgba(11,30,61,0.16);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: var(--font-body); }
+    ul { list-style: none; }
+
+    /* ─── UTILITIES ─────────────────────────────────────────────────── */
+    .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .section-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--blue); background: var(--sky);
+      padding: 4px 14px; border-radius: 99px; margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: var(--navy); line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 1.05rem; color: var(--slate); line-height: 1.7; margin-top: 12px; max-width: 560px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .95rem; font-weight: 600; letter-spacing: .01em;
+      padding: 14px 28px; border-radius: var(--radius-sm);
+      border: 2px solid transparent; transition: all .22s ease;
+    }
+    .btn-primary {
+      background: var(--blue); color: var(--white);
+      box-shadow: 0 4px 14px rgba(26,111,232,.35);
+    }
+    .btn-primary:hover { background: #1562d4; box-shadow: 0 6px 20px rgba(26,111,232,.45); transform: translateY(-1px); }
+    .btn-outline {
+      border-color: var(--navy); color: var(--navy); background: transparent;
+    }
+    .btn-outline:hover { background: var(--navy); color: var(--white); }
+    .btn-white {
+      background: var(--white); color: var(--navy); font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0,0,0,.12);
+    }
+    .btn-white:hover { background: var(--sky); transform: translateY(-1px); }
+
+    /* ─── TOPBAR ────────────────────────────────────────────────────── */
+    .topbar {
+      background: var(--navy-mid);
+      color: rgba(255,255,255,.72);
+      font-size: .8rem; text-align: center; padding: 9px 24px;
+      letter-spacing: .04em;
+    }
+    .topbar span { color: var(--blue-light); font-weight: 600; }
+
+    /* ─── HEADER / NAV ──────────────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(11,30,61,.06);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px; max-width: 1140px; margin: 0 auto;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.45rem; font-weight: 800;
+      color: var(--navy); display: flex; align-items: center; gap: 10px;
+    }
+    .logo-icon {
+      width: 36px; height: 36px; background: var(--blue);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 20px; height: 20px; fill: white; }
+    .logo span { color: var(--blue); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      font-size: .9rem; font-weight: 500; color: var(--slate);
+      transition: color .18s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta .btn { padding: 11px 22px; font-size: .88rem; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; border-radius: 2px; transition: .3s; }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 4px;
+      background: var(--white); border-top: 1px solid var(--border);
+      padding: 16px 24px 20px;
+    }
+    .mobile-menu a { padding: 10px 0; font-weight: 500; color: var(--slate); border-bottom: 1px solid var(--border); }
+    .mobile-menu .btn { margin-top: 10px; text-align: center; justify-content: center; }
+    .mobile-menu.open { display: flex; }
+
+    /* ─── HERO ──────────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, #1a3a70 100%);
+      color: var(--white); padding: 80px 0 72px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
+      border-radius: 99px; padding: 6px 16px; font-size: .8rem; font-weight: 500;
+      color: rgba(255,255,255,.85); margin-bottom: 20px; letter-spacing: .04em;
+    }
+    .hero-tag::before { content: '●'; color: #4ADE80; font-size: .65rem; }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 800; line-height: 1.15;
+      color: var(--white); margin-bottom: 20px;
+    }
+    .hero h1 em { color: var(--blue-light); font-style: normal; }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,.72); line-height: 1.75; margin-bottom: 32px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .trust-badges {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 40px;
+    }
+    .trust-badge {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-sm); padding: 12px 14px;
+      font-size: .82rem; font-weight: 500; color: rgba(255,255,255,.85);
+    }
+    .trust-badge-icon {
+      width: 28px; height: 28px; min-width: 28px;
+      background: var(--blue); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .trust-badge-icon svg { width: 14px; height: 14px; fill: white; }
+
+    /* Hero form card */
+    .hero-form-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 36px 32px; box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .hero-form-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .hero-form-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem; color: var(--navy); margin-bottom: 4px;
+    }
+    .hero-form-card p { font-size: .88rem; color: var(--slate); margin-bottom: 24px; }
+
+    /* ─── FORM SHARED STYLES ─────────────────────────────────────────── */
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: .82rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 6px; letter-spacing: .01em;
+    }
+    .form-group label .req { color: var(--blue); margin-left: 2px; }
+    .form-control {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: .9rem; color: var(--text);
+      background: var(--white); transition: border-color .18s, box-shadow .18s;
+      outline: none;
+    }
+    .form-control:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,111,232,.12); }
+    .form-control.error { border-color: var(--error); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* Consent blocks */
+    .consent-block {
+      background: var(--offwhite); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 14px;
+    }
+    .consent-check { display: flex; gap: 12px; align-items: flex-start; }
+    .consent-check input[type="checkbox"] {
+      width: 18px; height: 18px; min-width: 18px; margin-top: 2px; cursor: pointer;
+      accent-color: var(--blue);
+    }
+    .consent-check label {
+      font-size: .78rem; color: var(--slate); line-height: 1.5;
+      font-weight: 400; cursor: pointer; margin: 0;
+    }
+    .consent-check label a { color: var(--blue); text-decoration: underline; }
+    .consent-check label strong { color: var(--text); }
+    .optional-tag {
+      font-size: .72rem; background: #EEF2FF; color: #4F46E5;
+      padding: 1px 8px; border-radius: 99px; font-weight: 600; margin-left: 8px;
+    }
+    .required-tag {
+      font-size: .72rem; background: #FEF2F2; color: var(--error);
+      padding: 1px 8px; border-radius: 99px; font-weight: 600; margin-left: 8px;
+    }
+
+    .form-submit .btn { width: 100%; justify-content: center; font-size: 1rem; padding: 15px; }
+    .privacy-note {
+      margin-top: 12px; font-size: .74rem; color: var(--muted);
+      text-align: center; line-height: 1.5;
+    }
+
+    /* Success state */
+    .form-success {
+      display: none; text-align: center; padding: 32px 20px;
+      background: #F0FDF4; border-radius: var(--radius); border: 1px solid #BBF7D0;
+    }
+    .form-success.show { display: block; }
+    .form-success-icon {
+      width: 56px; height: 56px; background: var(--success);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .form-success-icon svg { width: 28px; height: 28px; fill: white; }
+    .form-success h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--navy); margin-bottom: 8px; }
+    .form-success p { font-size: .9rem; color: var(--slate); }
+
+    .field-error { font-size: .75rem; color: var(--error); margin-top: 4px; display: none; }
+    .field-error.show { display: block; }
+
+    /* ─── STATS BAR ──────────────────────────────────────────────────── */
+    .stats-bar {
+      background: var(--navy); color: var(--white); padding: 28px 0;
+    }
+    .stats-inner {
+      display: flex; gap: 0; justify-content: space-around; flex-wrap: wrap;
+    }
+    .stat { text-align: center; padding: 12px 24px; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem; font-weight: 800; color: var(--blue-light); display: block;
+    }
+    .stat-label { font-size: .82rem; color: rgba(255,255,255,.6); margin-top: 2px; }
+
+    /* ─── SERVICES ───────────────────────────────────────────────────── */
+    .services { padding: 88px 0; background: var(--offwhite); }
+    .services-header { text-align: center; margin-bottom: 56px; }
+    .services-header .section-sub { margin: 12px auto 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .service-card {
+      background: var(--white); border-radius: var(--radius-lg); padding: 36px 28px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      transition: transform .25s, box-shadow .25s; position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      transform: scaleX(0); transform-origin: left; transition: transform .3s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 56px; height: 56px; background: var(--sky);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-icon svg { width: 28px; height: 28px; fill: var(--blue); }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 12px;
+    }
+    .service-card p { font-size: .9rem; color: var(--slate); line-height: 1.7; margin-bottom: 20px; }
+    .service-bullets li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .86rem; color: var(--text); padding: 6px 0; border-bottom: 1px solid var(--border);
+    }
+    .service-bullets li:last-child { border-bottom: none; }
+    .service-bullets li::before { content: '✓'; color: var(--blue); font-weight: 700; font-size: .9rem; }
+    .service-cta { margin-top: 24px; }
+    .service-cta a {
+      font-size: .88rem; font-weight: 600; color: var(--blue);
+      display: inline-flex; align-items: center; gap: 6px; transition: gap .18s;
+    }
+    .service-cta a:hover { gap: 10px; }
+
+    /* ─── HOW IT WORKS ───────────────────────────────────────────────── */
+    .how-it-works { padding: 88px 0; background: var(--white); }
+    .how-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .how-steps { display: flex; flex-direction: column; gap: 0; }
+    .how-step { display: flex; gap: 20px; padding: 24px 0; position: relative; }
+    .how-step:not(:last-child)::after {
+      content: ''; position: absolute; left: 19px; top: 60px; bottom: -4px; width: 2px;
+      background: var(--border);
+    }
+    .step-num {
+      width: 40px; height: 40px; min-width: 40px;
+      background: var(--blue); color: white; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .9rem; position: relative; z-index: 1;
+    }
+    .step-content h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px;
+    }
+    .step-content p { font-size: .88rem; color: var(--slate); line-height: 1.6; }
+    .how-visual {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: var(--radius-lg); padding: 48px 40px; color: white;
+    }
+    .how-visual h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem; font-weight: 700; margin-bottom: 14px;
+    }
+    .how-visual p { font-size: .95rem; opacity: .75; line-height: 1.7; margin-bottom: 28px; }
+    .how-visual .btn { width: 100%; justify-content: center; }
+
+    /* ─── WHY US ─────────────────────────────────────────────────────── */
+    .why-us { padding: 88px 0; background: var(--offwhite); }
+    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .why-card {
+      background: var(--white); border-radius: var(--radius); padding: 22px 20px;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      transition: border-color .2s;
+    }
+    .why-card:hover { border-color: var(--blue); }
+    .why-icon {
+      width: 40px; height: 40px; background: var(--sky); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 12px;
+    }
+    .why-icon svg { width: 20px; height: 20px; fill: var(--blue); }
+    .why-card h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .why-card p { font-size: .82rem; color: var(--slate); line-height: 1.6; }
+
+    /* ─── URGENCY BAND ───────────────────────────────────────────────── */
+    .urgency {
+      background: linear-gradient(135deg, #0B1E3D 0%, #1A3A70 100%);
+      padding: 64px 0; color: white; text-align: center;
+    }
+    .urgency h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; margin-bottom: 16px;
+    }
+    .urgency h2 em { color: var(--blue-light); font-style: normal; }
+    .urgency p { font-size: 1.05rem; opacity: .78; max-width: 580px; margin: 0 auto 32px; line-height: 1.75; }
+    .urgency .btn { margin: 0 auto; }
+
+    /* ─── MAIN FORM SECTION ──────────────────────────────────────────── */
+    .form-section { padding: 88px 0; background: var(--white); }
+    .form-section-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .form-sidebar { position: sticky; top: 96px; }
+    .form-sidebar .section-sub { max-width: 100%; }
+    .sidebar-checks { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-check {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 16px; background: var(--offwhite); border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .sidebar-check-icon {
+      width: 36px; height: 36px; min-width: 36px;
+      background: var(--sky); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sidebar-check-icon svg { width: 18px; height: 18px; fill: var(--blue); }
+    .sidebar-check-text h5 { font-size: .9rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .sidebar-check-text p { font-size: .8rem; color: var(--slate); line-height: 1.5; }
+
+    .main-form-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px 36px;
+      box-shadow: var(--shadow-lg); position: relative;
+    }
+    .main-form-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    /* ─── TESTIMONIALS ───────────────────────────────────────────────── */
+    .testimonials { padding: 88px 0; background: var(--navy); color: white; }
+    .testimonials-header { text-align: center; margin-bottom: 52px; }
+    .testimonials-header .section-tag { background: rgba(255,255,255,.1); color: var(--blue-light); }
+    .testimonials-header .section-title { color: var(--white); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg); padding: 28px 24px;
+    }
+    .stars { color: #FBBF24; font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testimonial-text { font-size: .9rem; color: rgba(255,255,255,.8); line-height: 1.75; margin-bottom: 20px; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .9rem; color: white;
+    }
+    .author-info strong { display: block; font-size: .88rem; font-weight: 600; }
+    .author-info span { font-size: .78rem; color: rgba(255,255,255,.5); }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────────── */
+    footer {
+      background: #071529; color: rgba(255,255,255,.6); padding: 56px 0 32px;
+    }
+    .footer-inner {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px;
+    }
+    .footer-brand .logo { color: white; margin-bottom: 14px; display: inline-flex; }
+    .footer-brand p { font-size: .85rem; line-height: 1.7; max-width: 280px; }
+    .footer-col h5 {
+      font-size: .8rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 16px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: .85rem; transition: color .18s; }
+    .footer-col ul a:hover { color: var(--blue-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 24px; font-size: .78rem;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .footer-bottom p { line-height: 1.6; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,.5); transition: color .18s; }
+    .footer-links a:hover { color: var(--blue-light); }
+
+    /* ─── MODALS ─────────────────────────────────────────────────────── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,.6); backdrop-filter: blur(3px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--white); border-radius: var(--radius-lg);
+      max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto;
+      padding: 44px 40px; position: relative; box-shadow: var(--shadow-lg);
+    }
+    .modal-close {
+      position: absolute; top: 20px; right: 20px;
+      background: var(--offwhite); border: none; width: 36px; height: 36px;
+      border-radius: 50%; font-size: 1.1rem; color: var(--slate);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background .18s;
+    }
+    .modal-close:hover { background: var(--border); }
+    .modal h2 {
+      font-family: var(--font-display); font-size: 1.6rem; color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .modal .updated { font-size: .78rem; color: var(--muted); margin-bottom: 24px; }
+    .modal h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin: 20px 0 8px; }
+    .modal p { font-size: .88rem; color: var(--slate); line-height: 1.75; margin-bottom: 10px; }
+    .modal ul { margin-left: 18px; margin-bottom: 10px; }
+    .modal ul li { font-size: .88rem; color: var(--slate); line-height: 1.7; list-style: disc; margin-bottom: 4px; }
+
+    /* ─── SCROLL ANIMATION ───────────────────────────────────────────── */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero { padding: 56px 0; }
+      .hero h1 { font-size: 2.2rem; }
+      .trust-badges { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .how-inner { grid-template-columns: 1fr; }
+      .why-inner { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .form-section-inner { grid-template-columns: 1fr; }
+      .form-sidebar { position: static; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: block; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-badges { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .stats-inner { flex-direction: column; gap: 4px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-form-card { padding: 24px 20px; }
+      .main-form-card { padding: 28px 20px; }
+      .modal { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── TOP BAR ──────────────────────────────────────────────────────────── -->
+<div class="topbar">
+  <span>Fast appointment coordination</span> — Submit your request and we'll reach out with your proposal details.
+</div>
+
+<!-- ─── HEADER ────────────────────────────────────────────────────────────── -->
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      </div>
+      HomeShield<span> Pros</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#request-proposal">Request Proposal</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#request-proposal" class="btn btn-primary">Request Proposal</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#how-it-works" onclick="toggleMenu()">How It Works</a>
+    <a href="#why-us" onclick="toggleMenu()">Why Us</a>
+    <a href="#request-proposal" onclick="toggleMenu()" class="btn btn-primary">Request Proposal</a>
+  </div>
+</header>
+
+<!-- ─── HERO ──────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Left: Copy -->
+      <div>
+        <div class="hero-tag">Serving Homeowners Nationwide</div>
+        <h1>Fast Help for <em>Cleaner Air</em>, Safer Chimneys &amp; Working Garage Doors</h1>
+        <p class="hero-sub">
+          Request a professional appointment proposal for air duct cleaning, air duct repair,
+          chimney cleaning, chimney repair, or garage door repair — with clear communication from start to finish.
+        </p>
+        <div class="hero-actions">
+          <a href="#request-proposal" class="btn btn-white">Request My Proposal →</a>
+          <a href="#services" class="btn" style="color:rgba(255,255,255,.85); border-color:rgba(255,255,255,.3);">View Services</a>
+        </div>
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+            Licensed &amp; Insured Network
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+            Fast Appointment Coordination
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM16 18H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>
+            Clear Proposal Before Service
+          </div>
+          <div class="trust-badge">
+            <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+            Homeowner-First Communication
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Quick Form -->
+      <div class="hero-form-card">
+        <h2>Request My Proposal</h2>
+        <p>Tell us what you need — we'll follow up with next steps.</p>
+        <div id="heroFormSuccess" class="form-success">
+          <div class="form-success-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+          <h3>Request Received!</h3>
+          <p>Thanks — your request has been received. HomeShield Pros will review your information and contact you with appointment/proposal details.</p>
+        </div>
+        <form id="heroForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="h-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="h-name" name="fullName" class="form-control" placeholder="Jane Smith" required />
+              <div class="field-error" id="h-name-err">Please enter your full name.</div>
+            </div>
+            <div class="form-group">
+              <label for="h-phone">Mobile Phone <span class="req">*</span></label>
+              <input type="tel" id="h-phone" name="phone" class="form-control" placeholder="(555) 000-0000" required />
+              <div class="field-error" id="h-phone-err">Please enter a valid US phone number.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="h-address">Property Address <span class="req">*</span></label>
+            <input type="text" id="h-address" name="address" class="form-control" placeholder="123 Main St, City, State" required />
+            <div class="field-error" id="h-address-err">Please enter your property address.</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="h-service">Service Needed <span class="req">*</span></label>
+              <select id="h-service" name="service" class="form-control" required>
+                <option value="">Select service…</option>
+                <option>Air Duct Cleaning</option>
+                <option>Air Duct Repair</option>
+                <option>Chimney Cleaning</option>
+                <option>Chimney Repair</option>
+                <option>Garage Door Repair</option>
+                <option>Not Sure / Need Help Choosing</option>
+              </select>
+              <div class="field-error" id="h-service-err">Please select a service.</div>
+            </div>
+            <div class="form-group">
+              <label for="h-window">Preferred Window <span class="req">*</span></label>
+              <select id="h-window" name="appointmentWindow" class="form-control" required>
+                <option value="">Select time…</option>
+                <option>Today</option>
+                <option>Tomorrow</option>
+                <option>This Week</option>
+                <option>Next Available</option>
+              </select>
+              <div class="field-error" id="h-window-err">Please select a preferred window.</div>
+            </div>
+          </div>
+
+          <!-- General Consent -->
+          <div class="consent-block">
+            <div class="consent-check">
+              <input type="checkbox" id="h-consent" name="generalConsent" required />
+              <label for="h-consent">
+                <strong>Required</strong> — By submitting this form, I confirm that the information provided is accurate and I authorize HomeShield Pros to contact me about my service request, appointment options, and proposal.
+              </label>
+            </div>
+            <div class="field-error" id="h-consent-err" style="margin-top:8px;">You must agree to continue.</div>
+          </div>
+
+          <!-- SMS Consent -->
+          <div class="consent-block">
+            <div class="consent-check">
+              <input type="checkbox" id="h-sms" name="smsConsent" />
+              <label for="h-sms">
+                <span class="optional-tag">Optional</span>&nbsp;
+                I agree to receive SMS/text messages from HomeShield Pros at the mobile number provided regarding my service request, appointment scheduling, proposal updates, and related service communications. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out and HELP for help. Consent is not a condition of purchase. View our
+                <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a> and
+                <a href="#" onclick="openModal('termsModal'); return false;">Terms &amp; Conditions</a>.
+              </label>
+            </div>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Request My Proposal →</button>
+          </div>
+          <p class="privacy-note">
+            🔒 We respect your privacy. Your information is used only to respond to your service request, provide appointment/proposal updates, and communicate about related HomeShield Pros services. You can opt out of SMS at any time by replying STOP.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS BAR ──────────────────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat"><span class="stat-num">3</span><div class="stat-label">Home Services Covered</div></div>
+      <div class="stat"><span class="stat-num">Fast</span><div class="stat-label">Appointment Coordination</div></div>
+      <div class="stat"><span class="stat-num">Clear</span><div class="stat-label">Proposal Before Work Begins</div></div>
+      <div class="stat"><span class="stat-num">100%</span><div class="stat-label">No-Pressure Communication</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SERVICES ──────────────────────────────────────────────────────────── -->
+<section class="services fade-up" id="services">
+  <div class="container">
+    <div class="services-header fade-up">
+      <div class="section-tag">Our Services</div>
+      <h2 class="section-title">Everything Your Home Needs, Coordinated in One Place</h2>
+      <p class="section-sub">From indoor air quality to chimney safety and reliable garage doors — we coordinate professional service appointments so you don't have to.</p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Air Duct -->
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <h3>Air Duct Cleaning &amp; Repair</h3>
+        <p>Improve indoor air quality, reduce dust buildup, and address damaged or inefficient ductwork before it becomes a bigger problem.</p>
+        <ul class="service-bullets">
+          <li>Duct cleaning</li>
+          <li>Airflow issue support</li>
+          <li>Duct repair coordination</li>
+          <li>Dust and debris removal</li>
+        </ul>
+        <div class="service-cta">
+          <a href="#request-proposal">Request Appointment →</a>
+        </div>
+      </div>
+
+      <!-- Chimney -->
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        </div>
+        <h3>Chimney Cleaning &amp; Repair</h3>
+        <p>Keep your chimney safer, cleaner, and ready for use with professional cleaning and repair coordination.</p>
+        <ul class="service-bullets">
+          <li>Chimney sweep service</li>
+          <li>Creosote buildup removal</li>
+          <li>Smoke draft issue support</li>
+          <li>Masonry and cap repair coordination</li>
+        </ul>
+        <div class="service-cta">
+          <a href="#request-proposal">Request Appointment →</a>
+        </div>
+      </div>
+
+      <!-- Garage Door -->
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        </div>
+        <h3>Garage Door Repair</h3>
+        <p>Get help with garage doors that are stuck, noisy, off-track, or not closing properly.</p>
+        <ul class="service-bullets">
+          <li>Broken springs</li>
+          <li>Track and roller issues</li>
+          <li>Opener problems</li>
+          <li>Emergency repair coordination</li>
+        </ul>
+        <div class="service-cta">
+          <a href="#request-proposal">Request Appointment →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ───────────────────────────────────────────────────────── -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="how-inner">
+      <div>
+        <div class="section-tag">Simple Process</div>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-sub">We keep the process clear and pressure-free from your first request to the final approval.</p>
+
+        <div class="how-steps" style="margin-top:36px;">
+          <div class="how-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Tell Us What You Need</h4>
+              <p>Fill out the form with your service request, address, and preferred appointment window. Takes under 2 minutes.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>We Review Your Request</h4>
+              <p>Our coordination team reviews your request and identifies the best available service partner in your area.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>We Send Appointment &amp; Proposal Details</h4>
+              <p>You'll receive clear next steps including appointment options, timeline, and proposal details for your service.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>You Approve Before Work Begins</h4>
+              <p>No surprise charges. No pressure. You review and approve the proposal before any work is scheduled to start.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="how-visual fade-up">
+        <h3>Ready to get your appointment proposal?</h3>
+        <p>Submit your request now and our team will follow up with your personalized appointment and proposal details. Clear, simple, and homeowner-first.</p>
+        <a href="#request-proposal" class="btn btn-white">Request My Proposal →</a>
+        <div style="margin-top:32px; padding-top:24px; border-top:1px solid rgba(255,255,255,.15);">
+          <p style="font-size:.8rem; opacity:.5; margin-bottom:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;">What to expect</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:10px;align-items:center;font-size:.85rem;opacity:.8;">
+              <span style="color:#4ADE80;font-weight:700;">✓</span> Fast follow-up on your request
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;font-size:.85rem;opacity:.8;">
+              <span style="color:#4ADE80;font-weight:700;">✓</span> Clear proposal before commitment
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;font-size:.85rem;opacity:.8;">
+              <span style="color:#4ADE80;font-weight:700;">✓</span> No obligation to proceed
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;font-size:.85rem;opacity:.8;">
+              <span style="color:#4ADE80;font-weight:700;">✓</span> Professional service partners
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY US ─────────────────────────────────────────────────────────────── -->
+<section class="why-us fade-up" id="why-us">
+  <div class="container">
+    <div class="why-inner">
+      <div>
+        <div class="section-tag">Why HomeShield Pros</div>
+        <h2 class="section-title">Built for Homeowners Who Want Simple, Reliable Help</h2>
+        <p class="section-sub">We handle the coordination so you can focus on what matters — getting your home back in great shape, with no runaround.</p>
+        <div style="margin-top:28px;">
+          <a href="#request-proposal" class="btn btn-primary">Get My Appointment Proposal</a>
+        </div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+          <h4>Fast Response</h4>
+          <p>We review your request promptly and follow up with appointment details as quickly as possible.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+          <h4>Professional Partners</h4>
+          <p>We coordinate with a network of licensed and insured service professionals in your area.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/></svg></div>
+          <h4>Clear Proposal Process</h4>
+          <p>You receive a complete proposal before any work begins — no hidden fees or surprise charges.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+          <h4>No-Pressure Communication</h4>
+          <p>We keep communication clear and respectful. No obligation until you're ready to move forward.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+          <h4>Multiple Services in One Place</h4>
+          <p>Air ducts, chimneys, and garage doors — all coordinated through one simple request.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+          <h4>Homeowner-First Always</h4>
+          <p>Every step is designed around your needs — clear info, easy scheduling, and respectful follow-up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ───────────────────────────────────────────────────────── -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-header fade-up">
+      <div class="section-tag">Homeowner Feedback</div>
+      <h2 class="section-title">What Homeowners Are Saying</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I submitted a request for air duct cleaning and had a proposal in my inbox the same day. The process was straightforward — no back and forth, no pressure. Exactly what I needed."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div class="author-info"><strong>Maria R.</strong><span>Homeowner, Charlotte NC</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Our chimney needed cleaning before winter. HomeShield Pros coordinated everything — the proposal was clear, the technician was professional, and I knew exactly what to expect."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">DK</div>
+          <div class="author-info"><strong>David K.</strong><span>Homeowner, Tampa FL</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Garage door was off track and I didn't know who to call. Found HomeShield Pros, filled out the form, and had a repair scheduled quickly. Simple, professional, and no nonsense."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JL</div>
+          <div class="author-info"><strong>Jennifer L.</strong><span>Homeowner, San Antonio TX</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── URGENCY BAND ───────────────────────────────────────────────────────── -->
+<section class="urgency">
+  <div class="container">
+    <h2>Small home issues can become <em>expensive</em> fast.</h2>
+    <p>Dusty ducts, chimney buildup, and garage door problems often get worse when ignored. HomeShield Pros helps you get a clear next step before the issue becomes more stressful.</p>
+    <a href="#request-proposal" class="btn btn-white">Request My Proposal Today →</a>
+  </div>
+</section>
+
+<!-- ─── MAIN FORM SECTION ─────────────────────────────────────────────────── -->
+<section class="form-section" id="request-proposal">
+  <div class="container">
+    <div class="form-section-inner">
+
+      <!-- Sidebar -->
+      <div class="form-sidebar">
+        <div class="section-tag">Get Started</div>
+        <h2 class="section-title">Request Your Appointment Proposal</h2>
+        <p class="section-sub">Fill out the form and our team will review your request and contact you with next steps — including your personalized appointment proposal.</p>
+        <div class="sidebar-checks">
+          <div class="sidebar-check">
+            <div class="sidebar-check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+            <div class="sidebar-check-text">
+              <h5>No commitment required</h5>
+              <p>Requesting a proposal does not obligate you to purchase any service.</p>
+            </div>
+          </div>
+          <div class="sidebar-check">
+            <div class="sidebar-check-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+            <div class="sidebar-check-text">
+              <h5>Your information is secure</h5>
+              <p>We use your contact details only to respond to your service request.</p>
+            </div>
+          </div>
+          <div class="sidebar-check">
+            <div class="sidebar-check-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm.5 17.5v-2.5c0-.28-.22-.5-.5-.5h-1c-.28 0-.5.22-.5.5v2.5c-3.39-.49-6-3.39-6-6.5h2.5c.28 0 .5-.22.5-.5v-1c0-.28-.22-.5-.5-.5H5c0-3.87 3.13-7 7-7s7 3.13 7 7h-2.5c-.28 0-.5.22-.5.5v1c0 .28.22.5.5.5H19c0 3.11-2.61 6.01-6.01 6.5H12.5z"/></svg></div>
+            <div class="sidebar-check-text">
+              <h5>Fast follow-up</h5>
+              <p>Our team works to respond to all requests as quickly as possible.</p>
+            </div>
+          </div>
+          <div class="sidebar-check">
+            <div class="sidebar-check-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>
+            <div class="sidebar-check-text">
+              <h5>Clear proposal first</h5>
+              <p>You'll review and approve the proposal before any technician is dispatched.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Form Card -->
+      <div class="main-form-card">
+        <div id="mainFormSuccess" class="form-success">
+          <div class="form-success-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+          <h3>Request Received!</h3>
+          <p>Thanks — your request has been received. HomeShield Pros will review your information and contact you with your appointment and proposal details.</p>
+        </div>
+
+        <!--
+          BACKEND INTEGRATION POINT:
+          Connect this form's submit handler below to:
+          - Make.com / Zapier webhook
+          - GoHighLevel webhook
+          - HubSpot Forms API
+          - Custom API endpoint
+          Pass: fullName, phone, address, service, appointmentWindow, notes, generalConsent (bool),
+                smsConsent (bool), timestamp, pageSource, userAgent
+        -->
+        <form id="mainForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="m-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="m-name" name="fullName" class="form-control" placeholder="Jane Smith" required />
+              <div class="field-error" id="m-name-err">Please enter your full name.</div>
+            </div>
+            <div class="form-group">
+              <label for="m-phone">Mobile Phone <span class="req">*</span></label>
+              <input type="tel" id="m-phone" name="phone" class="form-control" placeholder="(555) 000-0000" required />
+              <div class="field-error" id="m-phone-err">Please enter a valid US phone number.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="m-address">Property Address <span class="req">*</span></label>
+            <input type="text" id="m-address" name="address" class="form-control" placeholder="123 Main St, City, State ZIP" required />
+            <div class="field-error" id="m-address-err">Please enter your property address.</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="m-service">Service Needed <span class="req">*</span></label>
+              <select id="m-service" name="service" class="form-control" required>
+                <option value="">Select service…</option>
+                <option>Air Duct Cleaning</option>
+                <option>Air Duct Repair</option>
+                <option>Chimney Cleaning</option>
+                <option>Chimney Repair</option>
+                <option>Garage Door Repair</option>
+                <option>Not Sure / Need Help Choosing</option>
+              </select>
+              <div class="field-error" id="m-service-err">Please select a service.</div>
+            </div>
+            <div class="form-group">
+              <label for="m-window">Preferred Appointment Window <span class="req">*</span></label>
+              <select id="m-window" name="appointmentWindow" class="form-control" required>
+                <option value="">Select time…</option>
+                <option>Today</option>
+                <option>Tomorrow</option>
+                <option>This Week</option>
+                <option>Next Available</option>
+              </select>
+              <div class="field-error" id="m-window-err">Please select a preferred window.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="m-notes">Additional Notes <span class="optional-tag">Optional</span></label>
+            <textarea id="m-notes" name="notes" class="form-control" rows="3" placeholder="Describe your issue or any additional details that might help…"></textarea>
+          </div>
+
+          <!-- General Consent — Required -->
+          <div class="consent-block">
+            <div class="consent-check">
+              <input type="checkbox" id="m-consent" name="generalConsent" required />
+              <label for="m-consent">
+                <span class="required-tag">Required</span>&nbsp;
+                By submitting this form, I confirm that the information provided is accurate and I authorize HomeShield Pros to contact me about my service request, appointment options, and proposal.
+              </label>
+            </div>
+            <div class="field-error" id="m-consent-err" style="margin-top:8px;">You must agree to this to submit your request.</div>
+          </div>
+
+          <!-- SMS Consent — Optional -->
+          <div class="consent-block">
+            <div class="consent-check">
+              <input type="checkbox" id="m-sms" name="smsConsent" />
+              <!-- NOTE: SMS checkbox is explicitly NOT required and NOT pre-checked per TCPA requirements -->
+              <label for="m-sms">
+                <span class="optional-tag">Optional</span>&nbsp;
+                I agree to receive SMS/text messages from HomeShield Pros at the mobile number provided regarding my service request, appointment scheduling, proposal updates, and related service communications. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out and HELP for help. Consent is not a condition of purchase. View our
+                <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a> and
+                <a href="#" onclick="openModal('termsModal'); return false;">Terms &amp; Conditions</a>.
+              </label>
+            </div>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary" style="font-size:1.05rem; padding:16px;">
+              Get My Appointment Proposal →
+            </button>
+          </div>
+          <p class="privacy-note">
+            🔒 We respect your privacy. Your information is used only to respond to your service request, provide appointment/proposal updates, and communicate about related HomeShield Pros services. You can opt out of SMS at any time by replying STOP.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="color:white;">
+          <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+          HomeShield<span style="color:var(--blue-light);"> Pros</span>
+        </a>
+        <p>HomeShield Pros helps homeowners coordinate fast, professional appointment proposals for air duct cleaning, chimney cleaning, and garage door repair.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#request-proposal">Air Duct Cleaning</a></li>
+          <li><a href="#request-proposal">Air Duct Repair</a></li>
+          <li><a href="#request-proposal">Chimney Cleaning</a></li>
+          <li><a href="#request-proposal">Chimney Repair</a></li>
+          <li><a href="#request-proposal">Garage Door Repair</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#request-proposal">Request Proposal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a></li>
+          <li><a href="#" onclick="openModal('termsModal'); return false;">Terms &amp; Conditions</a></li>
+          <li><a href="#" onclick="openModal('smsModal'); return false;">SMS Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a>
+        <a href="#" onclick="openModal('termsModal'); return false;">Terms &amp; Conditions</a>
+        <a href="#" onclick="openModal('smsModal'); return false;">SMS Terms</a>
+      </div>
+      <p>© 2025 HomeShield Pros. All rights reserved.</p>
+      <p>Reply STOP to opt out of SMS. Reply HELP for help. Message and data rates may apply. Message frequency may vary.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── MODAL: PRIVACY POLICY ─────────────────────────────────────────────── -->
+<div class="modal-overlay" id="privacyModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('privacyModal')">✕</button>
+    <h2>Privacy Policy</h2>
+    <p class="updated">Last Updated: January 1, 2025</p>
+
+    <h3>1. Information We Collect</h3>
+    <p>When you submit a service request through our website, we collect the following information:</p>
+    <ul>
+      <li>Full name</li>
+      <li>Mobile phone number</li>
+      <li>Property address</li>
+      <li>Service request details (service type, preferred appointment window, notes)</li>
+      <li>SMS consent status (whether you opted in to receive text messages)</li>
+      <li>Submission timestamp and page source</li>
+    </ul>
+
+    <h3>2. How We Use Your Information</h3>
+    <p>We use the information you provide solely to:</p>
+    <ul>
+      <li>Respond to your service request</li>
+      <li>Schedule appointments and coordinate service proposals</li>
+      <li>Send appointment/proposal updates and related service communications</li>
+      <li>Contact you via phone or SMS (if you have provided SMS consent) regarding your service request</li>
+    </ul>
+
+    <h3>3. SMS Consent &amp; Communications</h3>
+    <p>If you have opted in to receive SMS/text messages, HomeShield Pros may contact you at the mobile number provided with service request updates, appointment scheduling information, and proposal details. Your SMS consent is not shared with or sold to third parties for their own marketing purposes.</p>
+    <p>You can opt out of SMS communications at any time by replying <strong>STOP</strong> to any text message you receive from us. Reply <strong>HELP</strong> for assistance. Message and data rates may apply.</p>
+
+    <h3>4. Information Sharing</h3>
+    <p>We do not sell, rent, or share your personal information with third parties for their own independent marketing purposes. We may share your information with service partners for the limited purpose of fulfilling your service request and coordinating your appointment.</p>
+
+    <h3>5. Data Security</h3>
+    <p>We take reasonable measures to protect your information from unauthorized access. However, no method of transmission over the internet is 100% secure.</p>
+
+    <h3>6. Your Rights &amp; Choices</h3>
+    <p>You have the right to opt out of SMS communications at any time by replying STOP. To request removal of your information from our system or for any privacy-related questions, please contact us at the information below.</p>
+
+    <h3>7. Contact Us</h3>
+    <p>For privacy questions, please contact HomeShield Pros through our website's contact form or the email address listed in your appointment communications.</p>
+
+    <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">
+      <button class="btn btn-primary" onclick="closeModal('privacyModal')" style="width:100%; justify-content:center;">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL: TERMS & CONDITIONS ─────────────────────────────────────────── -->
+<div class="modal-overlay" id="termsModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('termsModal')">✕</button>
+    <h2>Terms &amp; Conditions</h2>
+    <p class="updated">Last Updated: January 1, 2025</p>
+
+    <h3>1. Service Requests &amp; Availability</h3>
+    <p>Submitting a service request through our website does not constitute a guarantee of service, same-day availability, or appointment confirmation. All services are subject to availability in your area and the availability of service partners in our network.</p>
+
+    <h3>2. Proposal Review &amp; Approval</h3>
+    <p>A service proposal will be prepared and sent to you following review of your request. All work is subject to your review and approval of the proposal before any service is scheduled or performed. HomeShield Pros does not begin work without your explicit approval.</p>
+
+    <h3>3. No Obligation to Purchase</h3>
+    <p>Requesting a proposal or appointment does not obligate you to purchase any service. You may decline any proposal without penalty.</p>
+
+    <h3>4. SMS Communications</h3>
+    <p>If you have provided optional SMS consent, you agree to receive text messages from HomeShield Pros regarding your service request, appointment scheduling, and proposal updates.</p>
+    <ul>
+      <li>Consent to receive SMS is not required as a condition of purchasing any service</li>
+      <li>Message frequency may vary depending on your service request activity</li>
+      <li>Message and data rates may apply based on your mobile carrier plan</li>
+      <li>Reply STOP at any time to cancel SMS communications</li>
+      <li>Reply HELP for assistance with SMS communications</li>
+    </ul>
+
+    <h3>5. Accuracy of Information</h3>
+    <p>By submitting a service request, you confirm that the information you have provided, including your name, address, and contact details, is accurate and complete. Providing inaccurate information may delay or prevent service coordination.</p>
+
+    <h3>6. Limitation of Liability</h3>
+    <p>HomeShield Pros acts as a service coordination platform. We are not responsible for the quality, timeliness, or outcome of services performed by independent service partners. Any disputes regarding service quality should be directed to the service provider.</p>
+
+    <h3>7. Changes to These Terms</h3>
+    <p>We reserve the right to update these Terms &amp; Conditions at any time. Updated terms will be posted on this page with a revised date.</p>
+
+    <h3>8. Contact</h3>
+    <p>For questions about these Terms &amp; Conditions, please contact us through the contact information provided in your service communications.</p>
+
+    <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">
+      <button class="btn btn-primary" onclick="closeModal('termsModal')" style="width:100%; justify-content:center;">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL: SMS TERMS ───────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="smsModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('smsModal')">✕</button>
+    <h2>SMS Terms &amp; Conditions</h2>
+    <p class="updated">Last Updated: January 1, 2025</p>
+
+    <h3>Program Description</h3>
+    <p>HomeShield Pros offers optional SMS/text message communications to homeowners who submit service requests and provide SMS consent. Messages include service request updates, appointment scheduling information, proposal details, and related service communications.</p>
+
+    <h3>Consent</h3>
+    <p>SMS consent is entirely optional. You are not required to consent to receive SMS messages in order to submit a service request or to purchase any services from HomeShield Pros. Consent to receive SMS is separate from your general service request authorization.</p>
+
+    <h3>Message Frequency</h3>
+    <p>Message frequency may vary. You may receive messages related to your active service requests, appointment scheduling, and proposal updates. We do not send promotional SMS blasts to opted-in users unrelated to their active service request.</p>
+
+    <h3>Message &amp; Data Rates</h3>
+    <p>Message and data rates may apply. Please check with your mobile carrier for details about your messaging plan.</p>
+
+    <h3>How to Opt Out</h3>
+    <p>You may opt out of SMS communications at any time by replying <strong>STOP</strong> to any message you receive from HomeShield Pros. After opting out, you will receive a single confirmation message and no further SMS messages will be sent.</p>
+
+    <h3>How to Get Help</h3>
+    <p>Reply <strong>HELP</strong> to any SMS message for assistance, or contact us through the contact information provided in your service communications.</p>
+
+    <h3>Supported Carriers</h3>
+    <p>SMS service is available on most major US carriers. Carrier support is not guaranteed.</p>
+
+    <h3>Privacy</h3>
+    <p>Your mobile number and SMS consent status are not sold or shared with third parties for their own marketing purposes. See our full Privacy Policy for details on how we handle your information.</p>
+
+    <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">
+      <button class="btn btn-primary" onclick="closeModal('smsModal')" style="width:100%; justify-content:center;">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── JAVASCRIPT ─────────────────────────────────────────────────────────── -->
+<script>
+  /* ── Mobile Menu ── */
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  /* ── Modals ── */
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.modal-overlay').forEach(el => {
+    el.addEventListener('click', e => { if (e.target === el) closeModal(el.id); });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(el => closeModal(el.id));
+  });
+
+  /* ── Phone Format ── */
+  function formatPhone(input) {
+    let v = input.value.replace(/\D/g, '').substring(0, 10);
+    if (v.length >= 7) v = '(' + v.substring(0,3) + ') ' + v.substring(3,6) + '-' + v.substring(6);
+    else if (v.length >= 4) v = '(' + v.substring(0,3) + ') ' + v.substring(3);
+    else if (v.length >= 1) v = '(' + v;
+    input.value = v;
+  }
+  document.querySelectorAll('input[type="tel"]').forEach(el => {
+    el.addEventListener('input', () => formatPhone(el));
+  });
+
+  /* ── Validation ── */
+  function isValidPhone(v) { return v.replace(/\D/g,'').length === 10; }
+  function showErr(id, show) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('show', show);
+  }
+  function markInput(el, hasErr) { el.classList.toggle('error', hasErr); }
+
+  function validateForm(prefix, formEl) {
+    const g = id => formEl.querySelector('#' + prefix + '-' + id);
+    let valid = true;
+
+    const name = g('name');
+    const nameOk = name.value.trim().length >= 2;
+    markInput(name, !nameOk); showErr(prefix + '-name-err', !nameOk);
+    if (!nameOk) valid = false;
+
+    const phone = g('phone');
+    const phoneOk = isValidPhone(phone.value);
+    markInput(phone, !phoneOk); showErr(prefix + '-phone-err', !phoneOk);
+    if (!phoneOk) valid = false;
+
+    const addr = g('address');
+    const addrOk = addr.value.trim().length >= 5;
+    markInput(addr, !addrOk); showErr(prefix + '-address-err', !addrOk);
+    if (!addrOk) valid = false;
+
+    const svc = g('service');
+    const svcOk = svc.value !== '';
+    markInput(svc, !svcOk); showErr(prefix + '-service-err', !svcOk);
+    if (!svcOk) valid = false;
+
+    const win = g('window');
+    const winOk = win.value !== '';
+    markInput(win, !winOk); showErr(prefix + '-window-err', !winOk);
+    if (!winOk) valid = false;
+
+    const consent = g('consent');
+    const consentOk = consent.checked;
+    showErr(prefix + '-consent-err', !consentOk);
+    if (!consentOk) valid = false;
+
+    return valid;
+  }
+
+  /* ── Form Submission ── */
+  async function handleSubmit(e, prefix, formId, successId) {
+    e.preventDefault();
+    const form = document.getElementById(formId);
+    if (!validateForm(prefix, form)) return;
+
+    const g = id => form.querySelector('#' + prefix + '-' + id);
+
+    // Collect payload
+    const payload = {
+      fullName:          g('name').value.trim(),
+      phone:             g('phone').value.trim(),
+      address:           g('address').value.trim(),
+      service:           g('service').value,
+      appointmentWindow: g('window').value,
+      notes:             prefix === 'm' ? (g('notes') ? g('notes').value.trim() : '') : '',
+      generalConsent:    g('consent').checked,
+      smsConsent:        g('sms').checked,
+      timestamp:         new Date().toISOString(),
+      pageSource:        window.location.href,
+      userAgent:         navigator.userAgent,
+    };
+
+    console.log('📋 HomeShield Pros — Form Submission:', payload);
+
+    /*
+    ──────────────────────────────────────────────────────────
+    BACKEND INTEGRATION POINT
+    Uncomment and configure one of the following:
+
+    Option A — Make.com / Zapier webhook:
+    const res = await fetch('https://hook.us1.make.com/YOUR_WEBHOOK_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    Option B — GoHighLevel Webhook:
+    const res = await fetch('https://services.leadconnectorhq.com/hooks/YOUR_LOCATION_ID/webhook-trigger/YOUR_HOOK_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    Option C — HubSpot Forms API:
+    const res = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/YOUR_PORTAL_ID/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fields: Object.entries(payload).map(([name, value]) => ({ name, value: String(value) })),
+        context: { pageUri: payload.pageSource, pageName: document.title },
+      }),
+    });
+    ──────────────────────────────────────────────────────────
+    */
+
+    // Show success
+    form.style.display = 'none';
+    document.getElementById(successId).classList.add('show');
+    window.scrollTo({ top: document.getElementById(successId).getBoundingClientRect().top + window.pageYOffset - 120, behavior: 'smooth' });
+  }
+
+  document.getElementById('heroForm').addEventListener('submit', e => handleSubmit(e, 'h', 'heroForm', 'heroFormSuccess'));
+  document.getElementById('mainForm').addEventListener('submit', e => handleSubmit(e, 'm', 'mainForm', 'mainFormSuccess'));
+
+  /* ── Scroll Animations ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
